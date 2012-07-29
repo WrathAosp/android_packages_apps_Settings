@@ -17,12 +17,20 @@
 package com.android.settings.deviceinfo.firmwareversion;
 
 import android.content.Context;
+import android.text.TextUtils;
+import android.util.Log;
+
+import androidx.preference.Preference;
 
 import com.android.settings.core.BasePreferenceController;
 import com.android.settingslib.DeviceInfoUtils;
 import androidx.preference.Preference;
 import android.text.TextUtils;
 import android.util.Log;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
