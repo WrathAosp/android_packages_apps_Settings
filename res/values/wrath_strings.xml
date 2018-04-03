@@ -229,4 +229,7 @@
     <!-- Device Codename -->
     <string name="about_device_name">Device Codename</string>
 
+    <!-- Wrath Maintainer -->
+    <string name="maintainer">Maintainer</string>
+
 </resources>
