@@ -210,4 +210,7 @@
     <!-- Wrath Settings -->
     <string name="wrath_title">RageHub</string>
     <string name="build_tweaks_summary_title">Feel The Wrath..</string>
+
+    <!-- Title for connected TWS device group [CHAR LIMIT=none]-->
+    <string name="connected_tws_device_saved_title">Saved Earbuds</string>
 </resources>
