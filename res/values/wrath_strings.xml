@@ -31,4 +31,8 @@
     <!-- Label for device's hardware ram size [CHAR LIMIT=40] -->
     <string name="total_ram">Total RAM</string>
 
+    <!-- WrathOS version preference -->
+    <string name="wrath_version">"WrathOS"</string>
+    <string name="build_date">"Build date"</string>
+
 </resources>
