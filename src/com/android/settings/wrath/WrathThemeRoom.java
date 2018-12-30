@@ -65,6 +65,7 @@ public class WrathThemeRoom extends DashboardFragment implements
     private static final String GRADIENT_COLOR_PROP = "persist.sys.theme.gradientcolor";
     private static final String PREF_THEME_SWITCH = "theme_switch";
     private static final int MENU_RESET = Menu.FIRST;
+    private static final String SWITCH_STYLE = "switch_style";
 
     static final int DEFAULT = 0xff1a73e8;
 
@@ -74,6 +75,7 @@ public class WrathThemeRoom extends DashboardFragment implements
     private ColorPickerPreference mThemeColor;
     private ColorPickerPreference mGradientColor;
     private ListPreference mThemeSwitch;
+    private ListPreference mSwitchStyle;
 
     @Override
     protected String getLogTag() {
@@ -88,6 +90,14 @@ public class WrathThemeRoom extends DashboardFragment implements
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+
+        mSwitchStyle = (ListPreference) findPreference(SWITCH_STYLE);
+        int switchStyle = Settings.System.getInt(resolver,
+                Settings.System.SWITCH_STYLE, 1);
+        int switchValueIndex = mSwitchStyle.findIndexOfValue(String.valueOf(switchStyle));
+        mSwitchStyle.setValueIndex(switchValueIndex >= 0 ? switchValueIndex : 0);
+        mSwitchStyle.setSummary(mSwitchStyle.getEntry());
+        mSwitchStyle.setOnPreferenceChangeListener(this);
 
 //        addPreferencesFromResource(R.xml.wrath_theme_room);
 
@@ -188,6 +198,11 @@ public class WrathThemeRoom extends DashboardFragment implements
                  mOverlayService.reloadAssets("com.android.systemui", UserHandle.USER_CURRENT);
              } catch (RemoteException ignored) {
              }
+        } else if (preference == mSwitchStyle) {
+            String value = (String) objValue;
+            Settings.System.putInt(resolver, Settings.System.SWITCH_STYLE, Integer.valueOf(value));
+            int valueIndex = mSwitchStyle.findIndexOfValue(value);
+            mSwitchStyle.setSummary(mSwitchStyle.getEntries()[valueIndex]);
         }
         return true;
     }
