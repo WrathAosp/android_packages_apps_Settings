@@ -181,4 +181,8 @@ public class Settings extends SettingsActivity {
     // Wrath Settings
     public static class WrathSettingsActivity extends SettingsActivity {}
     public static class GamingModeActivity extends SettingsActivity {}
+
+    // LiveDisplay
+    public static class LiveDisplaySettingsActivity extends SettingsActivity { /* empty */ }
+
 }

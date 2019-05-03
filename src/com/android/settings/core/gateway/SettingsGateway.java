@@ -151,6 +151,8 @@ import com.android.settings.wifi.tether.WifiTetherSettings;
 import com.wrath.settings.WrathSettings;
 import com.wrath.settings.fragments.GamingMode;
 
+import com.android.settings.livedisplay.LiveDisplaySettings;
+
 public class SettingsGateway {
 
     /**
@@ -288,7 +290,8 @@ public class SettingsGateway {
             GlobalActionsPanelSettings.class.getName(),
             DarkModeSettingsFragment.class.getName(),
 	    WrathSettings.class.getName(),
-            GamingMode.class.getName()
+            GamingMode.class.getName(),
+            LiveDisplaySettings.class.getName()
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
