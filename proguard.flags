@@ -71,3 +71,6 @@
 -keep class com.wrath.settings.**
 
 -dontwarn okio.**
+
+# Custom rules
+-keep class com.google.android.settings.** { *; }
