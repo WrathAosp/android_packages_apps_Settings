@@ -69,3 +69,5 @@
 
 #Wrath
 -keep class com.wrath.settings.**
+
+-dontwarn okio.**
