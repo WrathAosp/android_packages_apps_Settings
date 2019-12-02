@@ -226,4 +226,7 @@
     <string name="gradient_color">Gradient picker</string>
     <string name="gradient_summary">Gradient effect maker</string>
 
+    <!-- Device Codename -->
+    <string name="about_device_name">Device Codename</string>
+
 </resources>
