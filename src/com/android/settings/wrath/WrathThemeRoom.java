@@ -2,10 +2,13 @@ package com.android.settings.wrath;
 
 import com.android.internal.logging.nano.MetricsProto;
 
+import static android.os.UserHandle.USER_SYSTEM;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.app.UiModeManager;
 import android.content.Context;
 import android.content.ContentResolver;
 import android.content.DialogInterface;
@@ -21,6 +24,7 @@ import android.os.UserHandle;
 import androidx.fragment.app.Fragment;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
+import androidx.preference.PreferenceManager;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
@@ -31,7 +35,10 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Objects;
 
+import com.android.internal.util.wrath.ThemesUtils;
+import com.android.internal.util.wrath.WrathUtils;
 import com.android.settings.SettingsPreferenceFragment;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 import com.android.settings.dashboard.DashboardFragment;
@@ -52,10 +59,14 @@ public class WrathThemeRoom extends DashboardFragment implements
     private static final String ACCENT_COLOR_PROP = "persist.sys.theme.accentcolor";
     private static final String GRADIENT_COLOR = "gradient_color";
     private static final String GRADIENT_COLOR_PROP = "persist.sys.theme.gradientcolor";
+    private static final String PREF_THEME_SWITCH = "theme_switch";
 
     private IOverlayManager mOverlayService;
+    private UiModeManager mUiModeManager;
+
     private ColorPickerPreference mThemeColor;
     private ColorPickerPreference mGradientColor;
+    private ListPreference mThemeSwitch;
 
     @Override
     protected String getLogTag() {
@@ -73,10 +84,14 @@ public class WrathThemeRoom extends DashboardFragment implements
 
 //        addPreferencesFromResource(R.xml.wrath_theme_room);
 
+        mUiModeManager = getContext().getSystemService(UiModeManager.class);
+
         mOverlayService = IOverlayManager.Stub
                 .asInterface(ServiceManager.getService(Context.OVERLAY_SERVICE));
+
         setupAccentPref();
         setupGradientPref();
+        setupThemeSwitchPref();
     }
 
     @Override
@@ -118,6 +133,26 @@ public class WrathThemeRoom extends DashboardFragment implements
                  mOverlayService.reloadAssets("com.android.systemui", UserHandle.USER_CURRENT);
              } catch (RemoteException ignored) {
              }
+        } else if (preference == mThemeSwitch) {
+            String theme_switch = (String) objValue;
+            final Context context = getContext();
+            switch (theme_switch) {
+                case "1":
+                    handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_NO, ThemesUtils.SOLARIZED_DARK);
+                    break;
+                case "2":
+                    handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.SOLARIZED_DARK);
+                    break;
+                case "3":
+                    handleBackgrounds(true, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.SOLARIZED_DARK);
+                    break;
+            }
+            try {
+                 mOverlayService.reloadAndroidAssets(UserHandle.USER_CURRENT);
+                 mOverlayService.reloadAssets("com.android.settings", UserHandle.USER_CURRENT);
+                 mOverlayService.reloadAssets("com.android.systemui", UserHandle.USER_CURRENT);
+             } catch (RemoteException ignored) {
+             }
         }
         return true;
     }
@@ -140,6 +175,33 @@ public class WrathThemeRoom extends DashboardFragment implements
                 : Color.parseColor("#" + colorVal);
         mGradientColor.setNewPreviewColor(color);
         mGradientColor.setOnPreferenceChangeListener(this);
+    }
+
+    private void setupThemeSwitchPref() {
+        mThemeSwitch = (ListPreference) findPreference(PREF_THEME_SWITCH);
+        mThemeSwitch.setOnPreferenceChangeListener(this);
+        if (WrathUtils.isThemeEnabled("com.android.theme.solarizeddark.system")) {
+            mThemeSwitch.setValue("3");
+        } else if (mUiModeManager.getNightMode() == UiModeManager.MODE_NIGHT_YES) {
+            mThemeSwitch.setValue("2");
+        } else {
+            mThemeSwitch.setValue("1");
+        }
+    }
+
+    private void handleBackgrounds(Boolean state, Context context, int mode, String[] overlays) {
+        if (context != null) {
+            Objects.requireNonNull(context.getSystemService(UiModeManager.class))
+                    .setNightMode(mode);
+        }
+        for (int i = 0; i < overlays.length; i++) {
+            String background = overlays[i];
+            try {
+                mOverlayService.setEnabled(background, state, USER_SYSTEM);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @Override
