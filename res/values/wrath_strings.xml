@@ -241,4 +241,9 @@
     <string name="theme_type_baked_green">Baked Green</string>
     <string name="theme_type_choco_x">Choco X</string>
     <string name="theme_type_du_pitchblack">Pitch black</string>
+
+    <!-- Theme Reset Option -->
+    <string name="theme_option_reset_title">Reset Theme Options</string>
+    <string name="theme_option_reset_message">Are you sure you want to reset themes-accent to default?</string>
+
 </resources>
