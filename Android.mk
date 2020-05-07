@@ -55,12 +55,15 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
     zxing-core-1.7 \
     okhttpcustom \
     okio \
-    airbnb-lottie
+    airbnb-lottie \
+    expandablebottombar \
+    kotlin-stdlib
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
 LOCAL_AAPT_FLAGS := --auto-add-overlay \
-    --extra-packages com.wrath.settings
+    --extra-packages com.wrath.settings \
+    --extra-packages github.com.st235.lib_expandablebottombar
 
 LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res \
     packages/apps/WrathSettings/res
@@ -82,7 +85,8 @@ include $(CLEAR_VARS)
 LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES := \
     contextualcards:libs/contextualcards.aar \
     okhttpcustom:libs/okhttp-3.8.1.jar \
-    okio:libs/okio-1.13.0.jar
+    okio:libs/okio-1.13.0.jar \
+    expandablebottombar:libs/expandable_bottom_bar_116.aar
 
 include $(BUILD_MULTI_PREBUILT)
 
