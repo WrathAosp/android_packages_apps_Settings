@@ -53,6 +53,7 @@ import com.android.settingslib.search.SearchIndexable;
 import com.android.settings.display.OverlayCategoryPreferenceController;
 import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
+import com.android.settings.display.QsTileStylePreferenceController;
 
 public class WrathThemeRoom extends DashboardFragment implements
         OnPreferenceChangeListener, Indexable {
@@ -127,6 +128,7 @@ public class WrathThemeRoom extends DashboardFragment implements
                 "android.theme.customization.adaptive_icon_shape"));
         controllers.add(new OverlayCategoryPreferenceController(context,
                 "android.theme.customization.icon_pack.android"));
+	controllers.add(new QsTileStylePreferenceController(context));
         return controllers;
     }
 
