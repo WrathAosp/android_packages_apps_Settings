@@ -213,4 +213,9 @@
 
     <!-- Title for connected TWS device group [CHAR LIMIT=none]-->
     <string name="connected_tws_device_saved_title">Saved Earbuds</string>
+
+    <!-- Lottie Animations -->
+    <string name="apps_category">Apps</string>
+    <string name="volume_key_category_title">Volume Shortcut</string>
+    <string name="connected_devices_category_title">Connected Devices</string>
 </resources>
