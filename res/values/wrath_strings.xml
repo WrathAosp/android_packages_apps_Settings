@@ -246,4 +246,8 @@
     <string name="theme_option_reset_title">Reset Theme Options</string>
     <string name="theme_option_reset_message">Are you sure you want to reset themes-accent to default?</string>
 
+    <!-- Clipboard toast toggle -->
+    <string name="show_clipboard_toast">Show clipboard access alerts</string>
+    <string name="show_clipboard_toast_summary">Display a toast when an app tries to access the clipboard</string>
+
 </resources>
