@@ -148,7 +148,6 @@ import com.android.settings.wifi.p2p.WifiP2pSettings;
 import com.android.settings.wifi.savedaccesspoints.SavedAccessPointsWifiSettings;
 import com.android.settings.wifi.tether.WifiTetherSettings;
 
-import com.wrath.settings.WrathSettings;
 import com.wrath.settings.fragments.GamingMode;
 
 import com.android.settings.livedisplay.LiveDisplaySettings;
@@ -289,7 +288,6 @@ public class SettingsGateway {
             MobileNetworkListFragment.class.getName(),
             GlobalActionsPanelSettings.class.getName(),
             DarkModeSettingsFragment.class.getName(),
-	    WrathSettings.class.getName(),
             GamingMode.class.getName(),
             LiveDisplaySettings.class.getName()
     };
@@ -330,8 +328,6 @@ public class SettingsGateway {
             Settings.MyDeviceInfoActivity.class.getName(),
             Settings.ModuleLicensesActivity.class.getName(),
             UserBackupSettingsActivity.class.getName(),
-	    //Wrath
-	    Settings.WrathSettingsActivity.class.getName(),
             Settings.GamingModeActivity.class.getName(),
     };
 }

@@ -67,9 +67,6 @@
     public <init>(android.content.Context, android.net.Uri);
 }
 
-#Wrath
--keep class com.wrath.settings.**
-
 -dontwarn okio.**
 
 # Custom rules
