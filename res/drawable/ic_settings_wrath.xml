@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) 2020 WrathOS
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+       http://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  -->
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:name="vector"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:name="path"
+        android:pathData="M 1.5 2.09 C 2.4 3 3.87 3.73 5.69 4.25 C 7.41 2.84 9.61 2 12 2 C 14.39 2 16.59 2.84 18.31 4.25 C 20.13 3.73 21.6 3 22.5 2.09 C 22.47 3.72 21.65 5.21 20.28 6.4 C 21.37 8 22 9.92 22 12 C 22 13.755 21.538 15.48 20.66 17 C 19.783 18.52 18.52 19.783 17 20.66 C 15.48 21.538 13.755 22 12 22 C 9.349 22 6.804 20.946 4.929 19.071 C 3.054 17.196 2 14.651 2 12 C 2 9.92 2.63 8 3.72 6.4 C 2.35 5.21 1.53 3.72 1.5 2.09 M 20 12 C 20 9.879 19.157 7.843 17.657 6.343 C 16.157 4.843 14.121 4 12 4 C 9.879 4 7.843 4.843 6.343 6.343 C 4.843 7.843 4 9.879 4 12 C 4 14.121 4.843 16.157 6.343 17.657 C 7.843 19.157 9.879 20 12 20 C 14.121 20 16.157 19.157 17.657 17.657 C 19.157 16.157 20 14.121 20 12 M 10.5 10 C 10.5 10.8 9.8 11.5 9 11.5 C 8.2 11.5 7.5 10.8 7.5 10 L 7.5 8.5 L 10.5 10 M 16.5 10 C 16.5 10.8 15.8 11.5 15 11.5 C 14.2 11.5 13.5 10.8 13.5 10 L 16.5 8.5 L 16.5 10 M 12 17.23 C 10.25 17.23 8.71 16.5 7.81 15.42 L 9.23 14 C 9.68 14.72 10.75 15.23 12 15.23 C 13.25 15.23 14.32 14.72 14.77 14 L 16.19 15.42 C 15.29 16.5 13.75 17.23 12 17.23 Z"
+        android:fillColor="#fe1130"/>
+</vector>
