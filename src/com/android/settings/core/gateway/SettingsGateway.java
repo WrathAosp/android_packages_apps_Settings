@@ -289,7 +289,7 @@ public class SettingsGateway {
             MobileNetworkListFragment.class.getName(),
             GlobalActionsPanelSettings.class.getName(),
             DarkModeSettingsFragment.class.getName(),
-            WrathSettings.class.getName()
+            WrathSettings.class.getName(),
             GamingMode.class.getName(),
             LiveDisplaySettings.class.getName()
     };
