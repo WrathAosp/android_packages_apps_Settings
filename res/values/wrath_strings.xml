@@ -218,4 +218,10 @@
     <string name="apps_category">Apps</string>
     <string name="volume_key_category_title">Volume Shortcut</string>
     <string name="connected_devices_category_title">Connected Devices</string>
+
+    <string name="themeroom_title">Themes</string>
+    <string name="themeroom_summary">Theming</string>
+    <string name="accent_color">Accent picker</string>
+    <string name="accent_summary">System wide accent maker</string>
+
 </resources>

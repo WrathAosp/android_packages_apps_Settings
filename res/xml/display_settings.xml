@@ -43,6 +43,12 @@
         settings:controller="com.android.settings.display.DarkUIPreferenceController"
         settings:searchable="false"/>
 
+     <Preference
+         android:key="theme_room"
+         android:title="@string/themeroom_title"
+         android:summary="@string/themeroom_summary"
+         android:fragment="com.android.settings.wrath.WrathThemeRoom" />
+
     <com.android.settings.display.NightDisplayPreference
         android:key="night_display"
         android:title="@string/night_display_title"
