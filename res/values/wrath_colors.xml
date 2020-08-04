@@ -13,6 +13,6 @@
 <resources>
 
     <!-- WrathSettings Color -->
-    <color name="homepage_wrath_background">#133337</color>
+    <color name="homepage_wrath_background">#FFB086</color>
 
 </resources>
