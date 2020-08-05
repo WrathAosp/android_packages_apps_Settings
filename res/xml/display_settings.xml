@@ -43,12 +43,6 @@
         settings:controller="com.android.settings.display.DarkUIPreferenceController"
         settings:searchable="false"/>
 
-     <Preference
-         android:key="theme_room"
-         android:title="@string/themeroom_title"
-         android:summary="@string/themeroom_summary"
-         android:fragment="com.android.settings.wrath.WrathThemeRoom" />
-
     <com.android.settings.display.NightDisplayPreference
         android:key="night_display"
         android:title="@string/night_display_title"
@@ -188,21 +182,5 @@
         android:summary="@string/summary_placeholder"
         android:entries="@array/refresh_rate_entries"
         android:entryValues="@array/refresh_rate_values" />
-
-    <PreferenceCategory
-        android:key="theme_customization_category"
-        android:title="@string/theme_customization_category"
-        android:order="1200"> <!-- Incremented by 100 from last order (i.e. 1100) -->
-
-        <ListPreference
-            android:key="android.theme.customization.accent_color"
-            android:title="@string/theme_customization_accent_color_title"/>
-        <ListPreference
-            android:key="android.theme.customization.font"
-            android:title="@string/theme_customization_font_title"/>
-        <ListPreference
-            android:key="android.theme.customization.adaptive_icon_shape"
-            android:title="@string/theme_customization_icon_shape_title"/>
-    </PreferenceCategory>
 
 </PreferenceScreen>
