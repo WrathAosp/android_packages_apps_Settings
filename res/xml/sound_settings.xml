@@ -99,19 +99,27 @@
         android:order="-138"
         settings:controller="com.android.settings.notification.LinkedVolumesPreferenceController"/>
 
+    <!-- Volume Steps -->
+    <Preference
+        android:key="volume_steps"
+        android:title="@string/volume_steps_title"
+        android:summary="@string/volume_steps_summary"
+        android:fragment="com.android.settings.wrath.sound.VolumeSteps"
+        android:order="-130" />
+
     <!-- Also vibrate for calls -->
     <SwitchPreference
         android:key="vibrate_when_ringing"
         android:title="@string/vibrate_when_ringing_title"
         settings:controller="com.android.settings.notification.VibrateWhenRingPreferenceController"
-        android:order="-130"/>
+        android:order="-120"/>
 
     <!-- Interruptions -->
     <com.android.settingslib.RestrictedPreference
         android:key="zen_mode"
         android:title="@string/zen_mode_settings_title"
         android:fragment="com.android.settings.notification.ZenModeSettings"
-        android:order="-120"
+        android:order="-110"
         settings:useAdminDisabledSummary="true"
         settings:keywords="@string/keywords_sounds_and_notifications_interruptions"
         settings:allowDividerAbove="true"
@@ -120,7 +128,7 @@
     <Preference
         android:key="gesture_prevent_ringing_sound"
         android:title="@string/gesture_prevent_ringing_sound_title"
-        android:order="-110"
+        android:order="-100"
         android:fragment="com.android.settings.gestures.PreventRingingGestureSettings"
         settings:controller="com.android.settings.gestures.PreventRingingParentPreferenceController"/>
 
@@ -131,7 +139,7 @@
         android:dialogTitle="@string/ringtone_title"
         android:summary="@string/summary_placeholder"
         android:ringtoneType="ringtone"
-        android:order="-100"
+        android:order="-90"
         settings:keywords="@string/sound_settings"/>
 
     <!-- Phone ringtone for Slot2 -->
@@ -142,7 +150,7 @@
         android:summary="@string/summary_placeholder"
         android:ringtoneType="ringtone"
         settings:allowDividerAbove="false"
-        android:order="-90"/>
+        android:order="-80"/>
 
     <!-- Default notification ringtone -->
     <com.android.settings.DefaultRingtonePreference
@@ -151,7 +159,7 @@
         android:dialogTitle="@string/notification_ringtone_title"
         android:summary="@string/summary_placeholder"
         android:ringtoneType="notification"
-        android:order="-80"/>
+        android:order="-70"/>
 
     <!-- Default alarm ringtone -->
     <com.android.settings.DefaultRingtonePreference
@@ -161,7 +169,7 @@
         android:summary="@string/summary_placeholder"
         android:persistent="false"
         android:ringtoneType="alarm"
-        android:order="-70"/>
+        android:order="-60"/>
 
     <!-- Other sounds -->
     <PreferenceCategory
