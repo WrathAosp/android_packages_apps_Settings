@@ -220,7 +220,6 @@
     <string name="connected_devices_category_title">Connected Devices</string>
 
     <string name="themeroom_title">Themes</string>
-    <string name="themeroom_summary">Wrath Theming..</string>
     <string name="accent_color">Accent picker</string>
     <string name="accent_summary">System wide accent maker</string>
     <string name="gradient_color">Gradient picker</string>
