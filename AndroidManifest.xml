@@ -3327,16 +3327,14 @@
 
         <!-- This is the longest AndroidManifest.xml ever. -->
 
-        <!-- WrathOS additions -->
+        <!-- Wrath Settings -->
         <activity android:name=".Settings$WrathSettingsActivity"
                   android:label="@string/wrath_title"
                   android:icon="@drawable/ic_homepage_wrath"
                   android:parentActivityName="com.android.settings">
-            <intent-filter android:priority="19">
-                <action android:name="com.android.settings.action.SETTINGS"/>
+            <intent-filter>
+                  <action android:name="com.android.settings.action.SETTINGS"/>
             </intent-filter>
-            <meta-data android:name="com.android.settings.category"
-                       android:value="com.android.settings.category.ia.homepage"/>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                        android:value="com.wrath.settings.WrathSettings"/>
             <meta-data android:name="com.android.settings.summary"
