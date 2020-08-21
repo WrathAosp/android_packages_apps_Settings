@@ -90,6 +90,7 @@ public class WrathThemeRoom extends DashboardFragment implements
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+           ContentResolver resolver = getActivity().getContentResolver();
 
         mSwitchStyle = (ListPreference) findPreference(SWITCH_STYLE);
         int switchStyle = Settings.System.getInt(resolver,
@@ -131,6 +132,7 @@ public class WrathThemeRoom extends DashboardFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
+           ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mThemeColor) {
             int color = (Integer) objValue;
             String hexColor = String.format("%08X", (0xFFFFFFFF & color));
