@@ -57,8 +57,7 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
     okio \
     airbnb-lottie \
     expandablebottombar \
-    kotlin-stdlib \
-    faceunlock_utils
+    kotlin-stdlib
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
